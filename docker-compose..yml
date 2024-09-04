@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"  # Mapea el puerto 3000 del contenedor al puerto 3000 de la máquina host
+    volumes:
+      - .:/app  # Monta el directorio actual en /app dentro del contenedor
+    environment:
+      - VITE_PORT=5174  # Opcional: Configura la variable de entorno para Vite
+    command: npm run dev  # Comando para iniciar el servidor de desarrollo
