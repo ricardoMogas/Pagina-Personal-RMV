@@ -7,7 +7,6 @@ export class NavBar extends LitElement {
     render() {
         return html`
         <nav>
-            <div class="nav-background"></div>
             <div class="nav-logo">
                 <a href="#">
                     <svg width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,18 +18,22 @@ export class NavBar extends LitElement {
             </div>
             <div class="nav-body"> 
                 <ul class="list">
+                    <li><a href="#">👨‍💻About Me</a></li>
                     <li><a href="#">🛠️Proyects</a></li>
-                    <li><a href="#">📖Information</a></li>
+                    <li><a href="#">🥇Certificates and recognitions</a></li>
                 </ul>
             </div>
             <div class="nav-right"> 
-                <simple-button color="secondary" type="outline"> menu </simple-button>
+                <simple-button color="green" type="simple">
+                    menu
+                </simple-button>
             </div>
         </nav>
         `;
     }
 
     static styles = css`
+        
         nav {
             display: flex;
             position: fixed;
@@ -38,7 +41,7 @@ export class NavBar extends LitElement {
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            background-color: var(--dark-transparent);
+            background-color: var(--dark);
             border-radius: 8px;
             align-items: center;
             overflow: hidden; /* Asegura que el fondo no se desborde */
@@ -62,11 +65,11 @@ export class NavBar extends LitElement {
             list-style: none;
             display: none;
             padding: 0;
-            @media (min-width: 640px) {
+            @media (min-width: 700px) {
                 display: flex;
             }
             li a {
-                color: var(--light);
+                color: var(--green);
                 margin-left: 8px;
                 text-decoration: none;
             }

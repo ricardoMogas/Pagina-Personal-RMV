@@ -5,37 +5,59 @@ import "../Components/SimpleCard";
 @customElement("proyects-page")
 export class ProyectsPage extends LitElement {
 
+    
     render() {
         return html`
-        <div class="container">
+        <div class="post-one">
             <div class="title">
-                <h1>Proyects</h1>
-                <p>Here you can see all the proyects</p>
+                Header
             </div>
-            <div class="grid">
-                <simple-card></simple-card>
-                <simple-card></simple-card>
-                <simple-card></simple-card>
+            <div class="content">
+                <simple-card>Hola</simple-card>
             </div>
         </div>
         `;
     }
 
     static styles = css`
-        .container {
-            margin-top: 14%;
-            display: flex;
+        .post-one {
+            display: grid;
+            grid-template-columns: auto 2fr auto;
+            grid-template-rows: auto 1fr;
+            place-items: center; // Alinea verticalmente y horizontalmeente solo dentro de un grid, no en sus items
+            height: 50vh;
         }
 
         .title {
-            margin: 20px;
+            grid-column: 1 / 2;
+            padding: 8px;
+            // background-color: lightblue;
+            /* TEXT */
+            color: var(--dark);
         }
-        
-        .grid {
+
+        .content {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Modified code */
-            gap: 20px;
-            padding: 20px;
+            grid-template-columns: auto auto auto;
+            grid-column: 2 / 3;
+            padding: 8px;
+            // background-color: lightcoral;
+        }
+
+        @media (max-width: 700px) {
+            .title {
+                grid-column: 2 / 3;
+                padding: 8px;
+                // background-color: lightblue;
+            }
+
+            .content {
+                display: grid;
+                grid-template-columns: auto;
+                grid-column: 2 / 3;
+                padding: 8px;
+                // background-color: lightcoral;
+            }
         }
     `;
 }

@@ -1,13 +1,13 @@
-import { LitElement, html, css, CSSResultGroup } from "lit";
+import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement('simple-button')
 export class SimpleButton extends LitElement {
     @property({ type: String })
-    color = "";
+    color = "secondary";
 
     @property({ type: String})
-    type = "";
+    type = "simple";
 
     render() {
         return html`
@@ -27,17 +27,15 @@ export class SimpleButton extends LitElement {
         }
         
         button:hover {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: var(--primary);
         }
     
-        .primary { background-color: var(--primary); }
-        .secondary { background-color: var(--secondary); }
-        .success { background-color: var(--success); }
-        .warning { background-color: var(--warning); }
-        .danger { background-color: var(--danger); }
-        .info { background-color: var(--info); }
-        .light { background-color: var(--light); }
-        .dark { background-color: var(--dark); }
+        .primary-simple { background-color: var(--primary); }
+        .secondary-simple { background-color: var(--secondary); }
+        .green-simple { background-color: var(--green); }
+        .info-simple { background-color: var(--info); }
+        .light-simple { background-color: var(--light); }
+        .dark-simple { background-color: var(--dark); }
 
         .primary-outline { 
             color: var(--primary);
@@ -46,18 +44,6 @@ export class SimpleButton extends LitElement {
         .secondary-outline { 
             color: var(--secondary);
             /* border: 1px solid var(--secondary); */
-        }
-        .success-outline { 
-            color: var(--success);
-            /* border: 1px solid var(--success); */
-        }
-        .warning-outline { 
-            color: var(--warning);
-            /* border: 1px solid var(--warning); */
-        }
-        .danger-outline { 
-            color: var(--danger);
-            /* border: 1px solid var(--danger); */
         }
         .info-outline { 
             color: var(--info);

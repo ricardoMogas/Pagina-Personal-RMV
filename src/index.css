@@ -1,59 +1,44 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  /* sección colors */
-
-  --primary: #690dfd;
-  --secondary: #365b83;
-  --success: #00d68f;
-  --warning: #ffab00;
-  --danger: #ff4d4f;
-  --info: #00a7dc;
-  --light: #f0f2f5;
-  --dark: #000000;
-  --dark-blue: #0f1d3c;
-  --dark-transparent: rgba(3, 7, 56, 0.500);
-
-  /* others */
-  color-scheme: light dark;
-  background: #000000;
-  --gap: 5em;
-  --line: 1px;
-  --color: rgba(255, 255, 255, 0.2);
-
-  background-image: linear-gradient(
-      -90deg,
-      transparent calc(var(--gap) - var(--line)),
-      var(--color) calc(var(--gap) - var(--line) + 1px),
-      var(--color) var(--gap)
-    ),
-    linear-gradient(
-      0deg,
-      transparent calc(var(--gap) - var(--line)),
-      var(--color) calc(var(--gap) - var(--line) + 1px),
-      var(--color) var(--gap)
-    );
-  background-size: var(--gap) var(--gap);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('assets/RobotoMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+
+:root {
+    font-family: "Roboto Mono", monospace;
+    /* sección colors */
+
+    --primary: #690dfd;
+    --secondary: #365b83;
+    --green: #42b883;
+    --yellow: #ffab00;
+    --red: #ff4d4f;
+    --info: #00a7dc;
+    --light: #f0f2f5;
+    --dark: #1a1a1a;
+    --gris: #262626;
+    --dark-blue: #0f1d3c;
+    --dark-transparent: rgba(15, 29, 60, 0.8);
+
+    /* others */
+    color-scheme: light dark;
+    /* FIREFOX scrollbar disable */
+    scrollbar-width: none;
+}
+
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 10% 0 0 0;
+    width: 100%;
+    height: 100%;
+    --color: #cacaca;
+    background-color: #F3F3F3;
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+    background-size: 55px 55px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: linear-gradient;
-  }
+::-webkit-scrollbar {
+  display: none;
 }
