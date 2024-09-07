@@ -17,9 +17,10 @@
     --info: #00a7dc;
     --light: #f0f2f5;
     --dark: #1a1a1a;
-    --gris: #262626;
+    --deep-dark: #080808;
     --dark-blue: #0f1d3c;
     --dark-transparent: rgba(15, 29, 60, 0.8);
+    --gris: #262626;
 
     /* others */
     color-scheme: light dark;
@@ -41,4 +42,13 @@ body {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+/* PERSONAL NORMALISATION */
+h1 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
 }

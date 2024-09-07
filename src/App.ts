@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import './pages/HomePage';
+import './index.css';
+import './pages/ResourcesPage';
 import "./pages/ProyectsPage";
 import "./pages/InfoPage"
 import './Components/NavBar';
@@ -14,8 +15,9 @@ class AppRouter extends LitElement {
             <nav-bar></nav-bar>
         </header>
         <main class="content">
-            <info-page></info-page>
             <proyects-page></proyects-page>
+            <info-page></info-page>
+            <resources-page></resources-page>
         </main>
         <footer>
             <p>Este es el footer</p>
@@ -23,23 +25,18 @@ class AppRouter extends LitElement {
     `;
     }
     static styles = css`
-        :host {
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            
-        }
         main {
-            
+            margin-bottom: 90px;
         }
         footer {
             position: fixed;
-            bottom: 0;
+            bottom: 0;  
             left: 0;
             width: 100%;
+            min-height: 90px;
             background-color: var(--dark);
             color: white;
             text-align: center;
-            padding: 1rem;
         }
     `;
 }

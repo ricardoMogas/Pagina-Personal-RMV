@@ -18,8 +18,10 @@ export class InfoPage extends LitElement {
             height: 200px;
             width: auto;
             color: var(--light);
-            background-color: var(--dark);
+            background-color: var(--secondary);
         }
+        
+        
     `;
 }
 

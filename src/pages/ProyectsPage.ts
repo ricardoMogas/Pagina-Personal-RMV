@@ -14,6 +14,11 @@ export class ProyectsPage extends LitElement {
             </div>
             <div class="content">
                 <simple-card>Hola</simple-card>
+                <simple-card>Hola</simple-card>
+                <simple-card>Hola</simple-card>
+                <simple-card>Hola</simple-card>
+                <simple-card>Hola</simple-card>
+                <simple-card>Hola</simple-card>
             </div>
         </div>
         `;
@@ -26,6 +31,7 @@ export class ProyectsPage extends LitElement {
             grid-template-rows: auto 1fr;
             place-items: center; // Alinea verticalmente y horizontalmeente solo dentro de un grid, no en sus items
             height: 50vh;
+            background-color: var(--yellow);
         }
 
         .title {
