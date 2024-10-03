@@ -9,7 +9,7 @@ export class InfoPage extends LitElement {
         <div class="container-info">
             <div class="perfil-image">
                 <s-img 
-                    src="perfil-image.gif" 
+                    src="img-perfil.jpg" 
                     borderRadius="circle" 
                     border=4
                 ></s-img>
