@@ -10,15 +10,19 @@ export class CardComponent extends LitElement {
     render() {
         return html`
             <div class="contour">
-                <header></header>
                 <div class="card">
-                    <div class="card-title">Card Title</div>
-                    <!-- Comillas añadidas alrededor de src -->
-                    <img src="${this.srcimg}" alt="">
-                    <hr>
+                    <div class="card-title">
+                        Card Title
+                    </div>
                     <div class="card-scontent">
                         <slot></slot>
                     </div>
+                </div>
+                <div class="footer-image">
+                    <img 
+                        src="https://picsum.photos/200/300"
+                        alt=""
+                    >
                 </div>
             </div>
         `;
@@ -26,29 +30,15 @@ export class CardComponent extends LitElement {
 
     static styles = css`
         .contour {
-            margin: 12px;
-            box-shadow: 0 0 8px var(--secondary);
-            border-radius: 8px;
+            // margin: 12px 0;
+            // border-radius: 8px;
         }
-        
-        header {
-            /* POSITION AND SIZE */
-            height: 24px;
-            width: 100%;
-            border-radius: 8px 8px 0 0;
-            /* BACKGROUND and EFECTS */
-            background-color: var(--dark-transparent);
-        }
-        
-        
         
         .card {
             /* POSITION AND SIZE */
             display: flex;
             padding: 16px;
-            min-height: 100px;
-            min-width: 100px;
-            border-radius: 0 0 8px 8px;
+            border-radius: 8px 8px 0 0;
             /* BACKGROUND and EFECTS */
             background: var(--dark);
             flex-direction: column;
@@ -60,15 +50,29 @@ export class CardComponent extends LitElement {
             padding: 10px;
             text-align: center;
         }
-        .card img {
+        
+        .footer-image {
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+        }
+        .footer-image img {
+            object-fit: cover;
+            max-height: 124px;
             width: 100%;
-            height: auto;
-            border-radius: 4px;
+            filter: blur(2px);
+            border-radius: 0 0 8px 8px;
+            transition: filter 0.3s ease, max-height 0.3s ease; /* Transición suave */
         }
         
         hr {
             color: var(--light);
             width: 100%;
+        }
+        
+        /* HOVERS AND ANIMATED */
+        .footer-image img:hover {
+            filter: none;
+            max-height: 200px;
         }
     `;
 }

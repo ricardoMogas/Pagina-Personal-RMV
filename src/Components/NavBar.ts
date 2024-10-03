@@ -39,16 +39,17 @@ export class NavBar extends LitElement {
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%;
+            width: 70%;
             border-radius: 8px;
             align-items: center;
             overflow: hidden; /* Asegura que el fondo no se desborde */
             /* transparencies */
-            background-color: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px); /* Aplica el desenfoque al fondo */
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 10; // procura que el objeto siempre este por encima de los demas
+            backdrop-filter: blur(5px); /* Aplica el desenfoque al fondo */
             -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
             /* Shadows */
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.37);
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
@@ -69,9 +70,10 @@ export class NavBar extends LitElement {
             list-style: none;
             display: none;
             padding: 0;
-            @media (min-width: 700px) {
+            @media (min-width: 800px) {
                 display: flex;
             }
+
             li a {
                 color: var(--green);
                 margin-left: 8px;

@@ -9,7 +9,7 @@
     font-family: "Roboto Mono", monospace;
     /* sección colors */
 
-    --primary: #690dfd;
+    --primary: #764fbc;
     --secondary: #365b83;
     --green: #42b883;
     --yellow: #ffab00;
@@ -19,8 +19,15 @@
     --dark: #1a1a1a;
     --deep-dark: #080808;
     --dark-blue: #0f1d3c;
-    --dark-transparent: rgba(15, 29, 60, 0.8);
+    --secondary-transparent: rgb(54, 91, 131, 0.85);
+    --primary-transparent: rgb(118, 79, 188, 0.85);
+    --green-transparent: rgb(66, 184, 131, 0.85);
+    --dark-transparent: rgba(15, 29, 60, 0.85);
+    --red-transparent: rgba(255, 77, 79, 0.85);
+    --info-transparent: rgba(0, 167, 220, 0.85);
+    --gris-transparent: rgba(38, 38, 38, 0.85);
     --gris: #262626;
+    --gradient-color-one: linear-gradient(45deg, var(--primary), var(--secondary));
 
     /* others */
     color-scheme: light dark;
@@ -28,6 +35,14 @@
     scrollbar-width: none;
 }
 
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 55px 55px;
+    }
+}
 
 body {
     margin: 100px 0 0 0;
@@ -38,7 +53,10 @@ body {
     background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
     linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
     background-size: 55px 55px;
+    animation: moveBackground 5s linear infinite;
 }
+
+
 
 ::-webkit-scrollbar {
   display: none;
